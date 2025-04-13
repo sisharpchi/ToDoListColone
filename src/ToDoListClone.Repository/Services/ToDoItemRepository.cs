@@ -18,9 +18,11 @@ public class ToDoItemRepository : IToDoItemRepository
         throw new NotImplementedException();
     }
 
-    public Task<long> InsertToDoItemAsync(ToDoItem toDoItem)
+    public async Task<long> InsertToDoItemAsync(ToDoItem toDoItem)
     {
-        throw new NotImplementedException();
+        await mainContext.AddAsync(toDoItem);
+        await mainContext.SaveChangesAsync();
+        return toDoItem.Id;
     }
 
     public Task<List<ToDoItem>> SelectAllToDoItemsAsync(int skip = 0, int take = 10)
