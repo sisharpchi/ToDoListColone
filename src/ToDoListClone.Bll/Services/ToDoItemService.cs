@@ -13,9 +13,9 @@ public class ToDoItemService : IToDoItemService
         _toDoItemRepository = toDoItemRepository;
     }
 
-    public Task<long> AddToDoItemAsync(ToDoItemCreateDto toDoItemCreateDto)
+    public async Task<long> AddToDoItemAsync(ToDoItemCreateDto toDoItemCreateDto)
     {
-        throw new NotImplementedException();
+        return await _toDoItemRepository.InsertToDoItemAsync(CreateDtoToEntity(toDoItemCreateDto));
     }
 
     public Task DeleteToDoItemByIdAsync(long id)
@@ -65,5 +65,19 @@ public class ToDoItemService : IToDoItemService
             CreatedAt = toDoItem.CreatedAt,
             IsComplited = toDoItem.IsComplited
         };
+
     }
+    private ToDoItem CreateDtoToEntity(ToDoItemCreateDto toDoItemCreateDto)
+    {
+        return new ToDoItem
+        {
+            Id = toDoItemCreateDto.Id,
+            Title = toDoItemCreateDto.Title,
+            Description = toDoItemCreateDto.Description,
+            DueDate = toDoItemCreateDto.DueDate,
+            CreatedAt = toDoItemCreateDto.CreatedAt,
+            IsComplited = toDoItemCreateDto.IsComplited
+        };
+    }
+
 }
