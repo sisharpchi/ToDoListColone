@@ -5,6 +5,12 @@ VisualStudioVersion = 17.13.35825.156 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoListClone.Api", "ToDoListClone.Api\ToDoListClone.Api.csproj", "{B59A3856-026A-4C10-9BA8-CD927DC4710F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoListClone.Dal", "ToDoListClone.Dal\ToDoListClone.Dal.csproj", "{19AD7886-A3F9-4FA1-9589-4DB010E9C0BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoListClone.Bll", "ToDoListClone.Bll\ToDoListClone.Bll.csproj", "{64BD265E-B3F6-4356-A318-B1AE8EAAC00C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoListClone.Repository", "ToDoListClone.Repository\ToDoListClone.Repository.csproj", "{C4495499-8361-43C8-97C8-416CCC718D70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{B59A3856-026A-4C10-9BA8-CD927DC4710F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B59A3856-026A-4C10-9BA8-CD927DC4710F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B59A3856-026A-4C10-9BA8-CD927DC4710F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19AD7886-A3F9-4FA1-9589-4DB010E9C0BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19AD7886-A3F9-4FA1-9589-4DB010E9C0BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19AD7886-A3F9-4FA1-9589-4DB010E9C0BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19AD7886-A3F9-4FA1-9589-4DB010E9C0BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64BD265E-B3F6-4356-A318-B1AE8EAAC00C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64BD265E-B3F6-4356-A318-B1AE8EAAC00C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64BD265E-B3F6-4356-A318-B1AE8EAAC00C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64BD265E-B3F6-4356-A318-B1AE8EAAC00C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4495499-8361-43C8-97C8-416CCC718D70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4495499-8361-43C8-97C8-416CCC718D70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4495499-8361-43C8-97C8-416CCC718D70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4495499-8361-43C8-97C8-416CCC718D70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
