@@ -36,9 +36,11 @@ public class ToDoItemRepository : IToDoItemRepository
         return toDoItems;
     }
 
-    public Task<List<ToDoItem>> SelectByDueDateAsync(DateTime dateTime)
+    public async Task<List<ToDoItem>> SelectByDueDateAsync(DateTime dateTime)
     {
-        throw new NotImplementedException();
+        return await mainContext.ToDoItems
+            .Where(b => b.DueDate.Date == dateTime.Date)
+            .ToListAsync();
     }
 
     public Task<List<ToDoItem>> SelectCompletedAsync(int skip = 0, int take = 10)

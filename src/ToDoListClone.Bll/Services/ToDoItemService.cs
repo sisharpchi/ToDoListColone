@@ -1,4 +1,6 @@
-﻿using ToDoListClone.Bll.DTOs;
+﻿using Microsoft.EntityFrameworkCore;
+using ToDoListClone.Bll.DTOs;
+using ToDoListClone.Dal;
 using ToDoListClone.Dal.Entities;
 using ToDoListClone.Repository.Services;
 
@@ -28,11 +30,31 @@ public class ToDoItemService : IToDoItemService
         var toDoItems = await _toDoItemRepository.SelectAllToDoItemsAsync(skip, take);
         return toDoItems.Select(t => MapToGetDto(t)).ToList();
     }
-
-    public Task<List<ToDoItemGetDto>> GetByDueDateAsync(DateTime dateTime)
+    public async Task<List<ToDoItemGetDto>> GetByDueDateAsync(DateTime dateTime)
     {
-        throw new NotImplementedException();
+        var start = dateTime.Date;
+        var end = start.AddDays(1);
+
+        var items = await _toDoItemRepository.SelectAllToDoItemsAsync();
+
+        var filtered =  items
+            .Where(x => x.DueDate >= start && x.DueDate < end)
+            .Select(x => new ToDoItemGetDto
+            {
+                Id = x.Id,
+                Title = x.Title,
+                Description = x.Description,
+                DueDate = x.DueDate,
+                CreatedAt = x.CreatedAt,
+                IsComplited = x.IsComplited,
+            })
+            .ToList();
+
+        return filtered;
     }
+
+
+
 
     public Task<List<ToDoItemGetDto>> GetCompletedAsync(int skip = 0, int take = 10)
     {

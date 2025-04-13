@@ -41,4 +41,10 @@ public class ToDoItemController : ControllerBase
     {
         await _toDoItemService.DeleteToDoItemByIdAsync(Id);
     }
+
+    [HttpGet("DueDate")]
+    public async Task<List<ToDoItemGetDto>> DueDate(DateTime dateTime)
+    {
+        return await _toDoItemService.GetByDueDateAsync(dateTime);
+    }
 }
