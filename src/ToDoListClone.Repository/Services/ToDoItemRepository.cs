@@ -13,9 +13,11 @@ public class ToDoItemRepository : IToDoItemRepository
         this.mainContext = mainContext;
     }
 
-    public Task DeleteToDoItemByIdAsync(long id)
+    public async Task DeleteToDoItemByIdAsync(long id)
     {
-        throw new NotImplementedException();
+        var toDoItemId = await SelectToDoItemByIdAsync(id);
+        mainContext.ToDoItems.Remove(toDoItemId);
+        await mainContext.SaveChangesAsync();
     }
 
     public async Task<long> InsertToDoItemAsync(ToDoItem toDoItem)
@@ -49,9 +51,14 @@ public class ToDoItemRepository : IToDoItemRepository
         throw new NotImplementedException();
     }
 
-    public Task<ToDoItem> SelectToDoItemByIdAsync(long id)
+    public async Task<ToDoItem> SelectToDoItemByIdAsync(long id)
     {
-        throw new NotImplementedException();
+        var toDoItemId = await mainContext.ToDoItems.FirstOrDefaultAsync(b => b.Id == id);
+        if (toDoItemId is null)
+        {
+            throw new Exception("wrong id");
+        }
+        return toDoItemId;
     }
 
     public Task UpdateToDoItemAsync(ToDoItem updateToDoItem)

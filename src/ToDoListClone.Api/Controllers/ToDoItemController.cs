@@ -28,4 +28,17 @@ public class ToDoItemController : ControllerBase
         var result = await _toDoItemService.GetAllToDoItemsAsync(skip, take);
         return result;
     }
+
+    [HttpGet("toDoItemById")]
+    public async Task<ToDoItemGetDto> toDoItemById(long toDoItemId)
+    {
+        var itemId = await _toDoItemService.GetToDoItemByIdAsync(toDoItemId);
+        return itemId;
+    }
+
+    [HttpDelete("Delete")]
+    public async Task Delete(long Id)
+    {
+        await _toDoItemService.DeleteToDoItemByIdAsync(Id);
+    }
 }
