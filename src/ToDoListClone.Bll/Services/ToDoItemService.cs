@@ -18,9 +18,9 @@ public class ToDoItemService : IToDoItemService
         return await _toDoItemRepository.InsertToDoItemAsync(CreateDtoToEntity(toDoItemCreateDto));
     }
 
-    public Task DeleteToDoItemByIdAsync(long id)
+    public async Task DeleteToDoItemByIdAsync(long id)
     {
-        throw new NotImplementedException();
+        await _toDoItemRepository.DeleteToDoItemByIdAsync(id);
     }
 
     public async Task<List<ToDoItemGetDto>> GetAllToDoItemsAsync(int skip = 0, int take = 10)
@@ -44,9 +44,11 @@ public class ToDoItemService : IToDoItemService
         throw new NotImplementedException();
     }
 
-    public Task<ToDoItemGetDto> GetToDoItemByIdAsync(long id)
+    public async Task<ToDoItemGetDto> GetToDoItemByIdAsync(long id)
     {
-        throw new NotImplementedException();
+        var toDoItem = await _toDoItemRepository.SelectToDoItemByIdAsync(id);
+        var toDoItemIdDto = MapToGetDto(toDoItem);
+        return toDoItemIdDto;
     }
 
     public Task UpdateToDoItemAsync(ToDoItemUpdateDto updateToDoItem)
