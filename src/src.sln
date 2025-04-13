@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoListClone.Api", "ToDoListClone.Api\ToDoListClone.Api.csproj", "{B59A3856-026A-4C10-9BA8-CD927DC4710F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B59A3856-026A-4C10-9BA8-CD927DC4710F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B59A3856-026A-4C10-9BA8-CD927DC4710F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B59A3856-026A-4C10-9BA8-CD927DC4710F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B59A3856-026A-4C10-9BA8-CD927DC4710F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B62B8E00-EB76-4ECB-9942-433247965E30}
+	EndGlobalSection
+EndGlobal

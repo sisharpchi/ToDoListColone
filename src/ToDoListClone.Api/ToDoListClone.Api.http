@@ -1,0 +1,6 @@
+@ToDoListClone.Api_HostAddress = http://localhost:5276
+
+GET {{ToDoListClone.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
